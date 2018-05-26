@@ -1,0 +1,21 @@
+.Note{
+    max-width: 300px;
+    background-color: #FAFAFA;
+}
+
+.Note .collapsible{
+    border: none;
+    -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0);
+}
+
+.Note .collapsible .collapsible-header{
+    border-bottom: none;
+    background-color: transparent;
+}
+
+.Note .collapsible .collapsible-body{
+    border-bottom: none;
+    background-color: transparent;
+}

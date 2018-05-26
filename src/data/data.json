@@ -1,0 +1,34 @@
+{
+    "notes":[
+        {
+            "id":1,
+            "title": "Dias de vacaciones",
+            "content": "5, 6, 7 diciembre"
+        },
+        {
+            "id":2,
+            "title": "Banar a Nacho",
+            "content": "comprar shampoo" 
+        },
+        {
+            "id":3,
+            "title": "comprar pastillas",
+            "content": "para la cagadera" 
+        },
+        {
+            "id":4,
+            "title": "Sabado fiesta de Mar",
+            "content": "comprar regalo" 
+        },
+        {
+            "id":5,
+            "title": "Traer entradas RG",
+            "content": "" 
+        },
+        {
+            "id":6,
+            "title": "Estudiar react native",
+            "content": "cuenta udemy"
+        }
+    ]
+}
