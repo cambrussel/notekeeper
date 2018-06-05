@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import Note from './Note'
-import {Row, Col, Container} from 'react-materialize'
+import {Grid} from '@material-ui/core'
 import '../css/App.css';
 import Data from '../data/data.json'
 
 class App extends Component {
   render() {
     return (
-      <Container className="App">
-        <Row>
+      <Grid container className="App">
           {
             Data.notes.map(
               (note) => 
-                <Col s={3}><Note title={note.title} content={note.content} /></Col>
+                <Grid item xs={3}><Note title={note.title} content={note.content} /></Grid>
             )
           }
-        </Row>
-      </Container>
+      </Grid>
     );
   }
 }
