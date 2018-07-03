@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import {Card, Collapse, CardHeader, CardContent, IconButton, CardActions, Icon} from '@material-ui/core'
+import {Card, Collapse, CardHeader, CardContent, IconButton, CardActions, Icon, TextField} from '@material-ui/core'
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import ShareIcon from '@material-ui/icons/Share';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
+import Data from '../data/data.json'
 import red from '@material-ui/core/colors/red';
 
 const styles = theme => ({
@@ -17,6 +18,11 @@ const styles = theme => ({
     },
     actions: {
       display: 'flex',
+    },
+    textField: {
+      marginLeft: theme.spacing.unit,
+      marginRight: theme.spacing.unit,
+      width: 200,
     },
     expand: {
       transform: 'rotate(0deg)',
@@ -47,11 +53,30 @@ const styles = theme => ({
 
 class AddNote extends Component{
 
-state = { expanded: false };
+state = { attach: false,
+          color: false,
+          add: false
+        };
 
-handleExpandClick = () => {
-    this.setState({ expanded: !this.state.expanded });
+handleAttachClick = () => {
+    this.setState({ attach: !this.state.attach });
+    
   };
+
+handleColorClick = () => {
+    this.setState({ color: !this.state.color });
+};
+
+handleAddClick = () => {
+  this.setState({ add: !this.state.add });
+  this.addCard();
+};
+
+
+addCard = () => {
+  console.log("ya llegue aqui");
+
+}
 
 
  render(){
@@ -74,22 +99,21 @@ handleExpandClick = () => {
                       </Icon>
                   </IconButton>
                   <IconButton
-                      className={classnames(classes.expand, {
-                      [classes.expandOpen]: this.state.expanded,
-                      })}
-                      onClick={this.handleExpandClick}
-                      aria-expanded={this.state.expanded}
+                    onClick={this.handleAddClick}
                   >
                     <Icon className={classes.icon}>
                       add_circle
                     </Icon>
                   </IconButton>
                 </CardActions>
-                <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-                    <CardContent>
-                    <p className="collapsible-body">{this.props.content}</p>
-                    </CardContent>
-                </Collapse>
+                <CardContent>
+                <TextField
+                id="cardText"
+                placeholder="Hola escribe algo"
+                className={classes.textField}
+                margin="normal"
+              />
+              </CardContent>
            
         </Card>
     )
